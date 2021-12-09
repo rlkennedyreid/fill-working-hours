@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "bucket-fill"
+version = "0.1.0"
+description = ""
+authors = ["Robin Kennedy-Reid <robin.kennedy-reid@stfc.ac.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pylint = "^2.11.1"
+pip = "^21.3.1"
+autopep8 = "^1.6.0"
+tabulate = "^0.8.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
