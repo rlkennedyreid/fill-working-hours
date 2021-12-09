@@ -1,3 +1,4 @@
+import json
 import random
 import string
 from collections import deque
@@ -97,11 +98,10 @@ class Days:
 
 
 if __name__ == "__main__":
-    projects: dict[str, float] = {
-        'project-a': 92.0,
-        'project-b': 4.2
-    }
 
-    days = Days()
-    days.add_projects(projects)
-    days.print()
+    with open("./projects.json") as file:
+        projects = json.load(file)
+
+        days = Days()
+        days.add_projects(projects)
+        days.print()
