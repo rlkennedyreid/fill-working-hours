@@ -3,7 +3,7 @@
 Basic script to assist in the logging/tracking of my working hours
 
 ## How it works
-Create a file called `projects.json` in this directory, detailing project codes with the total hours you're allocating to that project. See [the example file](./projects.json) for format.
+Create a file called `projects.json` in this directory, detailing project codes with the total hours you're allocating to that project. See [the example file](./projects-example.json) for format.
 
 Then just run the script from this directory. The script sequentially fills days with project times until all hours are spent, and outputs the result.
 

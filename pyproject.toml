@@ -8,10 +8,12 @@ authors = ["Robin Kennedy-Reid <robin.kennedy-reid@stfc.ac.uk>"]
 python = "^3.9"
 pip = "^21.3.1"
 tabulate = "^0.8.9"
+types-tabulate = "^0.8.3"
 
 [tool.poetry.dev-dependencies]
-autopep8 = "^1.6.0"
 pylint = "^2.12.2"
+mypy = "^0.920"
+black = "^21.12b0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
