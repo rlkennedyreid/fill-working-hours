@@ -18,3 +18,49 @@ black = "^21.12b0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.mypy]
+files = ["src", "tests"]
+
+[tool.black]
+# extend_exclude = '''
+# ^/exclude_dir/
+# '''
+
+# See: https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html
+# For info on compatibility of black with isort, pylint, flake8
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+# extend_skip_glob = ["exclude_dir/**"]
+
+[tool.pylint.'MESSAGES CONTROL']
+disable=[
+  "all",
+]
+
+enable=[
+  "E",
+  "F",
+]
+
+[tool.pylint.FORMAT]
+max-line-length = "88"
+output-format="colorized"
+score="no"
+
+[tool.pylint.REPORTS]
+output-format="colorized"
+score="no"
+
+# See links below on exluding directories from pyright (and thus pylance)
+# https://github.com/microsoft/pylance-release/issues/642#issuecomment-732175189
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md#sample-config-file
+[tool.pyright]
+include = ["src"]
+# exclude = ["exclude_dir/"]
