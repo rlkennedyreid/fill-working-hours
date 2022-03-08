@@ -3,6 +3,8 @@ from io import StringIO
 
 from tabulate import tabulate
 
+HOURS_MINIMUM = 0.001
+
 
 class Day:
     max_hours: float
@@ -41,7 +43,8 @@ class Day:
 
         project_hours_remaining = -excess
 
-        if project_hours_remaining >= 0.0:
+        # Discard leftover fractions of hours due to float rounding
+        if project_hours_remaining >= HOURS_MINIMUM:
             return project_hours_remaining
         return 0.0
 
