@@ -1,11 +1,11 @@
-import json
+from json import load
 
-from src.days import Days
+from .days import Days
 
 if __name__ == "__main__":
 
     with open("./projects.json", encoding="utf-8") as file:
-        projects = json.load(file)
+        projects = load(file)
 
         days = Days()
         days.add_projects(projects)
