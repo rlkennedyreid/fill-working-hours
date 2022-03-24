@@ -16,7 +16,9 @@ Then just run the script from this directory. The script sequentially fills days
     "project-b": 43.2
 }
 
-python main.py
+poetry install
+
+fill-time
 
 ## output
 ╒═══════╤═════════════════╤═══════════════╕

@@ -3,6 +3,12 @@ name = "fill-time"
 version = "0.1.0"
 description = ""
 authors = ["Robin Kennedy-Reid <robin.kennedy-reid@stfc.ac.uk>"]
+packages = [
+    { include = "fill_time", from = "src" },
+]
+
+[tool.poetry.scripts]
+fill-time = "fill_time.__main__:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
