@@ -3,10 +3,10 @@ from io import StringIO
 
 from tabulate import tabulate
 
-HOURS_MINIMUM = 0.001
-
 
 class Day:
+    HOURS_MINIMUM = 0.0001
+
     max_hours: float
     allocations: dict[str, float]
 
@@ -44,7 +44,7 @@ class Day:
         project_hours_remaining = -excess
 
         # Discard leftover fractions of hours due to float rounding
-        if project_hours_remaining >= HOURS_MINIMUM:
+        if project_hours_remaining >= self.HOURS_MINIMUM:
             return project_hours_remaining
         return 0.0
 
@@ -88,7 +88,6 @@ class Days:
             print(
                 tabulate(
                     table,
-                    tablefmt="fancy_grid",
                     colalign=alignments,
                     headers=headers,
                     showindex=True,
